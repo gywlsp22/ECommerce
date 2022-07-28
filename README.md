@@ -3,3 +3,4 @@
 2. Create Git Repository
 3. Add data
 5. Add routing
+6. Create Node.JS Server
