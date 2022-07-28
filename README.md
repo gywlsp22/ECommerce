@@ -5,3 +5,4 @@
 5. Add routing
 6. Create Node.JS Server
 7. Fetch Products From Backend
+8. Manage-State-By-Reducer-Hook
