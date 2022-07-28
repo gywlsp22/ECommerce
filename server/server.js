@@ -1,5 +1,11 @@
-const express=require('express') ;
+import express ,{ json, urlencoded }from 'express' ;
 const app = express()
+import cors from 'cors';
+
+app.use(cors());
+
+app.use(json());
+app.use(urlencoded({ extended: true}));
 
 const  data={
  products: [
