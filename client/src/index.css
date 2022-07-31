@@ -12,17 +12,13 @@ code {
     monospace;
 }
 
-header{
-  background-color: orange;
-  text-align: center;
+.site-container{
+  min-height: 100vh;
+}
+main{
+  flex: 1;
+}
 
-}
-header a{
-  color: #fff;
-  font-size:30px;
-  font-weight: 700;
-  text-decoration: none;
-}
 .products{
   display: flex;
   flex-wrap: wrap;
