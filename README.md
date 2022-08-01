@@ -6,3 +6,5 @@
 6. Create Node.JS Server
 7. Fetch Products From Backend
 8. Manage-State-By-Reducer-Hook
+9. Add bootstrap-UI-Framework
+10. Create Product and Rating Component
