@@ -39,3 +39,7 @@ main{
   color:black;
   border: none;
 }
+
+.img-large{
+  max-width: 100%;
+}

@@ -51,7 +51,7 @@ const  data={
       category: 'Pants',
       image: '/imgs/p4.jpg',
       price: 65,
-      countInStock: 5,
+      countInStock: 0,
       brand: 'Puma',
       rating: 4.5,
       numReviews: 10,
@@ -62,8 +62,20 @@ const  data={
 
 
 app.get('/api/products', function (req, res) {
-  res.json(data.products);
-})
+  res.send(data.products);
+});
+app.get('/api/products/slug/:slug', function (req, res) {
+  console.log(data.products);
+  const product = data.products.find(x=> x.slug === req.params.slug);
+  
+  console.log(product);
+  if(product){
+    res.send(product);
+  } else {
+    res.status(404).send({message: 'Product Not Found'});
+  }
+});
+
 
 app.listen(5000, ()=>{
   console.log("server starts!!!")
