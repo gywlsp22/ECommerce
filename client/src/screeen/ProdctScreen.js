@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useEffect,useReducer } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import ListGroup from "react-bootstrap/ListGroup"
@@ -31,6 +31,7 @@ const reducer= (state,action)=>{
 };
 
 function ProductScreen(){
+  const navigator = useNavigate();
  const {slug} =useParams();
 
  const [{ loading, error, product }, dispatch] = useReducer(reducer, {
@@ -69,6 +70,7 @@ ctxDispatch({
   type:'CART_ADD_ITEM',
   payload :{...product, quantity},
 });
+navigator('/cart');
 }
 
  return(
