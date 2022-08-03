@@ -10,6 +10,7 @@ app.use(urlencoded({ extended: true}));
 const  data={
  products: [
     {
+      _id:'1',
       name: 'Nike Slim shirt',
       slug: 'nike-slim-shirt',
       category: 'Shirts',
@@ -22,6 +23,7 @@ const  data={
       description: 'high quality shirt',
     },
     {
+      _id:'2',
       name: 'Adidas Fit Shirt',
       slug: 'adidas-fit-shirt',
       category: 'Shirts',
@@ -34,6 +36,7 @@ const  data={
       description: 'high quality product',
     },
     {
+      _id:'3',
       name: 'Nike Slim Pant',
       slug: 'nike-slim-pant',
       category: 'Pants',
@@ -46,6 +49,7 @@ const  data={
       description: 'high quality product',
     },
     {
+      _id:'',
       name: 'Adidas Fit Pant',
       slug: 'adidas-fit-pant',
       category: 'Pants',
@@ -65,7 +69,6 @@ app.get('/api/products', function (req, res) {
   res.send(data.products);
 });
 app.get('/api/products/slug/:slug', function (req, res) {
-  console.log(data.products);
   const product = data.products.find(x=> x.slug === req.params.slug);
   
   console.log(product);
@@ -75,6 +78,17 @@ app.get('/api/products/slug/:slug', function (req, res) {
     res.status(404).send({message: 'Product Not Found'});
   }
 });
+
+app.get('/api/products/:id', function (req, res) {
+  const product = data.products.find(x=> x._id === req.params.id);
+  
+  if(product){
+    res.send(product);
+  } else {
+    res.status(404).send({message: 'Product Not Found'});
+  }
+});
+
 
 
 app.listen(5000, ()=>{
