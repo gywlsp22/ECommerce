@@ -3,9 +3,21 @@ import {Link} from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Rating from './Rating';
+import { StoreContext } from '../Store';
+import {useState ,useContext} from 'react'
 
 function Product(props){
   const {product}=props;
+
+  const {state,dispatch:ctxDispatch} =useContext(StoreContext);
+  const addToCartHandler =()=>{
+  ctxDispatch({
+    type:'CART_ADD_ITEM',
+    payload :{...product, quantity:1},
+  });
+  }
+  
+
   return(
     <Card>
      <Link to={`/product/${product.slug}`}>
@@ -19,7 +31,7 @@ function Product(props){
       <Card.Text>
       ${product.price}
       </Card.Text>
-      <Button className='btn'>Add to cart</Button>
+      <Button  onClick={addToCartHandler} className='btn'>Add to cart</Button>
      </Card.Body>
      
      </Card>
