@@ -5,8 +5,8 @@ import Button from 'react-bootstrap/Button';
 import { Link, useLocation } from "react-router-dom";
 
 export default function SigninScreen(){
-  const {search} =useLocation();
-  const redirectInUrl =new URLSearchParams(search).get('redirect');
+  const {location} =useLocation();
+  const redirectInUrl =new URLSearchParams(location).get('redirect');
   const redirect = redirectInUrl? redirectInUrl : '/';
 
   return(
