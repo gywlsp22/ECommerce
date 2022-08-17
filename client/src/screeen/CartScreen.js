@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link ,useNavigate } from 'react-router-dom';
 import axios from "axios";
+import { getOverlayDirection } from "react-bootstrap/esm/helpers";
 
 export default function CartScreen(){
 
@@ -42,6 +43,7 @@ const removeItemHandler= (item)=>{
 const checkoutHandler=()=>{
   navigator('/signin?redirect=/shipping');
 } 
+
 
 
 return(
