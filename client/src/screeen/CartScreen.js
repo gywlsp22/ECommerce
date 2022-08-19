@@ -13,7 +13,7 @@ import { getOverlayDirection } from "react-bootstrap/esm/helpers";
 
 export default function CartScreen(){
 
-  const navigator = useNavigate();
+  const navigate = useNavigate();
 
   const {state, dispatch:ctxDispatch}=useContext(StoreContext);
 const{
@@ -41,7 +41,7 @@ const removeItemHandler= (item)=>{
 
 
 const checkoutHandler=()=>{
-  navigator('/signin?redirect=/shipping');
+  navigate('/shipping');
 } 
 
 

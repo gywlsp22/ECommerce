@@ -16,6 +16,7 @@ import CartScreen from './screeen/CartScreen';
 import SigninScreen from './screeen/SigninScreen';
 import SignupScreen from './screeen/SignupScreen';
 import ShippingAddressScreen from './screeen/ShippingAddressScreen';
+import PaymentMethodScreen from './screeen/PaymentMethodScreen';
 
 
 
@@ -28,6 +29,7 @@ function App() {
     ctxDispatch({type:'USER_SIGNOUT'});
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
+    localStorage.removeItem('paymentMethod');
   }
 
   return (
@@ -80,6 +82,7 @@ function App() {
           <Route path="/signin" element={<SigninScreen />}/>
           <Route path="/signup" element={<SignupScreen />}/>
           <Route path="/shipping" element={<ShippingAddressScreen />}/>
+          <Route path="/payment" element={<PaymentMethodScreen />}/>
           <Route path="/" element={<HomeScreen />} />
         </Routes>
         </Container>
