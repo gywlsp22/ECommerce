@@ -24,3 +24,4 @@
 24. Create-SignUp-Screen
 25. Implement Select Payment Method Screen
 26. Create-Place-Order-Screen
+27. Implement Place Order Action
