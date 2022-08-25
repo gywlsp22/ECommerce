@@ -44,7 +44,7 @@ function reducer (state,action){
         return{...state, cart:{...state.cart, cartItems}};
       }
 
-      case 'CART_CLREAR' :{
+      case 'CART_CLEAR' :{
         return{...state, cart:{...state.cart, cartItems:[]}}
       }
 
