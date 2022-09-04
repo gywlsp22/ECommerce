@@ -20,6 +20,7 @@ import PaymentMethodScreen from './screeen/PaymentMethodScreen';
 import PlaceOrderScreen from './screeen/PlaceOrderScreen';
 import OrderScreen from './screeen/OrderScreen';
 import OrderHistoryScreen from './screeen/OrderHistoryScreen';
+import ProfileScreen from './screeen/ProfileScreen';
 
 
 
@@ -32,6 +33,7 @@ function App() {
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
     localStorage.removeItem('paymentMethod');
+    window.location.href = '/signin';
   }
 
   return (
@@ -87,6 +89,8 @@ function App() {
           <Route path="/cart" element={<CartScreen />}/>
           <Route path="/signin" element={<SigninScreen />}/>
           <Route path="/signup" element={<SignupScreen />}/>
+          <Route path="/profile" element={<SignupScreen />}/>
+          <Route path="/profile" element={<ProfileScreen />}/>
           <Route path="/shipping" element={<ShippingAddressScreen />}/>
           <Route path="/payment" element={<PaymentMethodScreen />}/>
           <Route path="/placeorder" element={<PlaceOrderScreen />}/>
