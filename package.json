@@ -1,0 +1,22 @@
+{
+  "name": "ecoomerce",
+  "version": "1.0.0",
+  "description": "1. Create React App\r 2. Create Git Repository\r 3. Add data\r 5. Add routing\r 6. Create Node.JS Server\r 7. Fetch Products From Backend\r 8. Manage-State-By-Reducer-Hook\r 9. Add bootstrap-UI-Framework\r 10. Create Product and Rating Component\r 11. Create Product detail Screen\r 12. Create-Loading-and-Message-Component\r 13. Create-React-Context\r 14. Complete Add to Cart\r 15. Create Cart Screen\r 16. Complete Cart Screen\r 17. Create-Signin-Screen\r 18. Connect-To-MongoDB-Database\r 19. Seed sample product\r 20. Seed sample user\r 21. Create-Signin-Backend-API\r 22. Complete Signin Screen\r 23. Create-shipping-Screen\r 24. Create-SignUp-Screen\r 25. Implement Select Payment Method Screen\r 26. Create-Place-Order-Screen\r 27. Implement Place Order Action\r 28. Create Order Screen\r 29. Pay Order By PayPal\r 30. Display order History\r 31. Create Profile Screen\r 32. Publish To Heroku",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gywlsp22/ECommerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gywlsp22/ECommerce/issues"
+  },
+  "homepage": "https://github.com/gywlsp22/ECommerce#readme"
+}
