@@ -12,7 +12,7 @@
     "build": "cd server && npm install && cd ../client && npm install && npm run build",
     "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build"
+ 
 
   },
   "repository": {
