@@ -30,3 +30,4 @@
 30. Display order History
 31. Create Profile Screen
 32. Publish To Heroku
+33. Add Sidebar and Search Box
