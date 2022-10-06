@@ -1,13 +1,12 @@
-
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Rating from './Rating';
 import { StoreContext } from '../Store';
-import {useState ,useContext} from 'react'
+import {useContext} from 'react'
 import axios from 'axios';
 
-function Product(props){
+ function Product(props){
   const {product}=props;
 
   const {state, dispatch:ctxDispatch}=useContext(StoreContext);
@@ -60,4 +59,4 @@ function Product(props){
   
   )
 }
-export default Product
+export default Product;
