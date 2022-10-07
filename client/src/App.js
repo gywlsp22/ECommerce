@@ -30,7 +30,7 @@ import ProtectedRoute from './components/ProtectedRoutes';
 import AdminRoute from './components/AdminRoute';
 import DashboardScreen from './screeen/DashboardScreen';
 import ProductListScreen from './screeen/ProductListScreen';
-
+import OrderListScreen from './screeen/OrderListScreen';
 
 
 function App() {
@@ -196,6 +196,14 @@ function App() {
           element={
             <AdminRoute>
               <ProductListScreen />
+            </AdminRoute>
+          }
+          ></Route>
+          <Route
+          path="/admin/orders"
+          element={
+            <AdminRoute>
+              <OrderListScreen />
             </AdminRoute>
           }
           ></Route>
