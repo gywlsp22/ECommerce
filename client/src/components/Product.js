@@ -49,7 +49,7 @@ import axios from 'axios';
       </Card.Text>
       {
         product.countInStock ===0? 
-        <Button variant="light" disabled>Out of stock</Button>
+        <Button variant="light" >Out of stock</Button>
         :
         <Button  onClick={()=>addToCartHandler(product)} className='btn'>Add to cart</Button>
       }
