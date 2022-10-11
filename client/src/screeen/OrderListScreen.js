@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet-async";
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Button from "react-bootstrap/esm/Button";
+import { toast } from "react-toastify";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -20,6 +21,20 @@ const reducer = (state, action) => {
       };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
+    case 'DELETE_REQUEST':
+      return {...state, loading: true, successDelete:false};
+    case 'DELETE_SUCCESS':
+      return {
+        ...state,
+        loadingDelete: false,
+        successDelete: true,
+      }
+    case 'DELETE_FAIL':
+      return {
+        ...state, loadingDelete: false};
+    case 'DELETE_RESET':
+      return {...state, loadingDelete:false, successDelete:false};
+      
     default:
       return state;
   }
@@ -29,7 +44,7 @@ export default function OrderListScreen(){
   const navigate = useNavigate();
   const {state} = useContext(StoreContext);
   const {userInfo} = state;
-  const [{loading, error, orders}, dispatch] = useReducer(reducer,{
+  const [{loading, error, orders,loadingDelete,successDelete}, dispatch] = useReducer(reducer,{
     loading: true,
     error:'',
   });
@@ -49,9 +64,30 @@ export default function OrderListScreen(){
         });
       }
     }
+   if (successDelete) {
+    dispatch({type: 'DELETE_RESET'});
+   } else {
     fetchData();
-  },[userInfo]);
+   }
+  },[userInfo, successDelete]);
+  
 
+const deleteHandler = async (order)=>{
+  if(window.confirm('Are you sure to delete?')){
+    try{
+      dispatch({ type: 'DELETE_REQUEST' });
+        await axios.delete(`http://localhost:5000/api/orders/${order._id}`, {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        });
+        dispatch({type: 'DELETE_SUCCESS'});
+    } catch(err){
+      toast.error(getError(error));
+      dispatch({
+        type: 'DELETE_FAIL',
+      });
+    }
+  }
+}
   return(
 
     <div>
@@ -59,6 +95,7 @@ export default function OrderListScreen(){
       <title>Orders</title>
     </Helmet>
     <h1>Orders</h1>
+    {loadingDelete && <LoadingBox></LoadingBox>}
     {loading ? (
       <LoadingBox></LoadingBox>
     ) : error ? (
@@ -99,6 +136,12 @@ export default function OrderListScreen(){
                 >
                   Details
                 </Button>
+                &nbsp;
+                <Button
+                type="button"
+                variant="light"
+                onClick={()=> deleteHandler(order)}
+                >Delete</Button>
               </td>
             </tr>
           ))}
