@@ -84,7 +84,6 @@ export default function OrderListScreen(){
               <td>{order.createdAt.substring(0, 10)}</td>
               <td>{order.totalPrice.toFixed(2)}</td>
               <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
-              <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
               <td>
                 {order.isDelivered
                   ? order.deliveredAt.substring(0, 10)
@@ -95,7 +94,7 @@ export default function OrderListScreen(){
                   type="button"
                   variant="light"
                   onClick={() => {
-                    navigate(`/order/${order._id}`);
+                    navigate(`/orders/${order._id}`);
                   }}
                 >
                   Details
