@@ -2,8 +2,8 @@ import './App.css';
 import {BrowserRouter, Route, Routes,Link} from 'react-router-dom'
 import { toast, ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import HomeScreen from './screeen/HomeScreen';
-import ProductScreen from './screeen/ProdctScreen';
+import HomeScreen from './screen/HomeScreen';
+import ProductScreen from './screen/ProdctScreen';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -12,27 +12,27 @@ import {LinkContainer} from 'react-router-bootstrap';
 import { useContext, useEffect ,useState} from 'react';
 import { StoreContext } from './Store';
 import Badge from 'react-bootstrap/esm/Badge';
-import CartScreen from './screeen/CartScreen';
-import SigninScreen from './screeen/SigninScreen';
-import SignupScreen from './screeen/SignupScreen';
-import ShippingAddressScreen from './screeen/ShippingAddressScreen';
-import PaymentMethodScreen from './screeen/PaymentMethodScreen';
-import PlaceOrderScreen from './screeen/PlaceOrderScreen';
-import OrderScreen from './screeen/OrderScreen';
-import OrderHistoryScreen from './screeen/OrderHistoryScreen';
-import ProfileScreen from './screeen/ProfileScreen';
+import CartScreen from './screen/CartScreen';
+import SigninScreen from './screen/SigninScreen';
+import SignupScreen from './screen/SignupScreen';
+import ShippingAddressScreen from './screen/ShippingAddressScreen';
+import PaymentMethodScreen from './screen/PaymentMethodScreen';
+import PlaceOrderScreen from './screen/PlaceOrderScreen';
+import OrderScreen from './screen/OrderScreen';
+import OrderHistoryScreen from './screen/OrderHistoryScreen';
+import ProfileScreen from './screen/ProfileScreen';
 import Button from 'react-bootstrap/esm/Button';
 import axios from 'axios';
 import { getError } from './utils';
 import SearchBox from './components/SearchBox';
-import SearchScreen from './screeen/SearchScreen';
+import SearchScreen from './screen/SearchScreen';
 import ProtectedRoute from './components/ProtectedRoutes';
 import AdminRoute from './components/AdminRoute';
-import DashboardScreen from './screeen/DashboardScreen';
-import ProductListScreen from './screeen/ProductListScreen';
-import OrderListScreen from './screeen/OrderListScreen';
-import UserListScreen from './screeen/UserListScreen';
-
+import DashboardScreen from './screen/DashboardScreen';
+import ProductListScreen from './screen/ProductListScreen';
+import OrderListScreen from './screen/OrderListScreen';
+import UserListScreen from './screen/UserListScreen';
+import UserEditScreen from './screen/UserEditScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(StoreContext);
@@ -215,6 +215,16 @@ function App() {
             </AdminRoute>
           }
           ></Route>
+          <Route
+          path="/admin/user/:id"
+          element={
+            <AdminRoute>
+              <UserEditScreen />
+            </AdminRoute>
+          }
+          >
+
+          </Route>
           <Route path="/placeorder" element={<PlaceOrderScreen />}/>
           <Route path="/orders/:id" element={
            <ProtectedRoute>
