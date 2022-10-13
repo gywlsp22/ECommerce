@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/gywlsp22/ECommerce#readme",
   "dependencies": {
+    "@react-google-maps/api": "^2.13.1",
     "react-google-charts": "^4.0.0"
   }
 }

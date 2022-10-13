@@ -33,10 +33,11 @@ import ProductListScreen from './screen/ProductListScreen';
 import OrderListScreen from './screen/OrderListScreen';
 import UserListScreen from './screen/UserListScreen';
 import UserEditScreen from './screen/UserEditScreen';
+import MapScreen from './screen/MapScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(StoreContext);
-  const { cart, userInfo} = state;
+  const {fullBox, cart, userInfo} = state;
 
   const signoutHandler =()=>{
     ctxDispatch({type:'USER_SIGNOUT'});
@@ -69,6 +70,12 @@ function App() {
       sidebarIsOpen
       ? "d-flex flex-column site-container active-cont"
       :"d-flex flex-column site-container "
+      // ? fullBox
+        // ? "site-container active-cont d-flex  flex-column full-box"
+        // : " site-containter active-cont d-flex flex-column"
+        // : fullBox
+            // ? 'site-container d-flex flex-column full-box'
+            // : 'site-container d-flex flex-column'
      }>
       <ToastContainer position='bottom-center' limit={1}/>
       <header>
@@ -181,6 +188,13 @@ function App() {
             <ProfileScreen />
            </ProtectedRoute> 
           }/>
+          <Route
+          path='/map'
+          element={
+            <ProtectedRoute>
+              <MapScreen></MapScreen>
+            </ProtectedRoute>
+          }></Route>
           <Route path="/shipping" element={<ShippingAddressScreen />}/>
           <Route path="/payment" element={<PaymentMethodScreen />}/>
           {/* admin Routes */}
