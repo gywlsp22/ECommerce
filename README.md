@@ -1,4 +1,9 @@
-# E-Commerce website
+## React로 mern아마존 클론코딩
+mern이란? mongoDB, Express, React, Node 스택을 사용한 풀스택 프로젝트이다.
+
+
+
+## E-Commerce website
 1. Create React App
 2. Create Git Repository
 3. Add data
