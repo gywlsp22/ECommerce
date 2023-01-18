@@ -1,6 +1,14 @@
 ## React로 mern아마존 클론코딩
-mern이란? mongoDB, Express, React, Node 스택을 사용한 풀스택 프로젝트이다.
 
+## used technologies
+MonogoDB 
+Express
+React
+NodeJS
+
+## purpose
+react를 제대로 학습하기 위해서 ecommerce사이트인 아마존을 클론 코딩해 보았다.
+프론트엔드 개발자를 희망한다고 하더라도 client 부분뿐만 아니라 server 부분까지 간단하게라도 구현할 줄안다면 웹사이트 개발에 대한 이해도가 올라갈 것이라 생각해서 JavaScript만으로 프론트에서 백엔드까지 제작해볼 수 있는 mern stack을 선택해 웹사이트를 구현해보았다.
 
 
 ## E-Commerce website
