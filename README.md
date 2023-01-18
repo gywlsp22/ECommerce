@@ -1,10 +1,12 @@
-## React로 mern아마존 클론코딩
+# React로 mern아마존 클론코딩
+
 
 ## used technologies
-MonogoDB 
-Express
-React
-NodeJS
+* MonogoDB 
+* Express
+* React
+* NodeJS
+
 
 ## purpose
 react를 제대로 학습하기 위해서 ecommerce사이트인 아마존을 클론 코딩해 보았다.
